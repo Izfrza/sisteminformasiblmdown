@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMA Negeri 1 Maju Jaya - Website Profil Sekolah</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="frontend-app">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-school me-2"></i>SMA Negeri 1 Maju Jaya
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#profile">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#news">Berita</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#gallery">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Kontak</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showAdminLogin()">
+                                <i class="fas fa-sign-in-alt"></i> Admin
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section id="home" class="hero-section">
+            <div class="container">
+                <h1 class="display-4 fw-bold">SMA Negeri 1 Maju Jaya</h1>
+                <p class="lead">Mewujudkan Generasi Unggul, Berkarakter, dan Berprestasi</p>
+                <a href="#profile" class="btn btn-primary btn-lg mt-3">Selengkapnya</a>
+            </div>
+        </section>
+
+        <section id="profile" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center">Profil Sekolah</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Visi dan Misi</h3>
+                        <h5>Visi:</h5>
+                        <p>Menjadi sekolah unggulan yang menghasilkan lulusan berkarakter, berprestasi, dan mampu bersaing di era global.</p>
+                        <h5>Misi:</h5>
+                        <ul>
+                            <li>Menyelenggarakan pendidikan yang berkualitas dan berkarakter</li>
+                            <li>Mengembangkan potensi peserta didik secara optimal</li>
+                            <li>Mendorong inovasi dalam pembelajaran</li>
+                            <li>Menjalin kerjasama dengan masyarakat dan dunia usaha</li>
+                        </ul>
+                    </div>
+                   <div class="col-md-6">
+                        <h3>Total Siswa dan Guru</h3>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-user-graduate fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <h5 class="mb-0">Total Siswa</h5>
+                                        <small id="total-siswa">1250 Siswa</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-chalkboard-teacher fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <h5 class="mb-0">Total Guru</h5>
+                                        <small id="total-guru">55 Guru</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-4">Daftar Guru</h4>
+                        <button class="btn btn-primary btn-sm mb-3" data-bs-toggle="modal" data-bs-target="#guruModal">
+                            <i class="fas fa-list-alt me-2"></i>Lihat Daftar Guru
+                        </button>
+
+                        <div class="modal fade" id="guruModal" tabindex="-1" aria-labelledby="guruModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="guruModalLabel">Daftar Guru (Nama & Profesi)</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-striped" id="guru-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Nama Guru</th>
+                                                    <th>Profesi (Mata Pelajaran)</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Berita Terbaru</h2>
+                <div class="row" id="news-container">
+                    </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline-primary" onclick="showAllNewsPage()">Lihat Semua Berita</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center">Galeri Kegiatan</h2>
+                <div class="row" id="gallery-container">
+                    </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline-primary" onclick="showAllGalleryPage()">Lihat Semua Foto</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Kontak Kami</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-4">
+                            <h4><i class="fas fa-map-marker-alt text-primary me-2"></i> Alamat</h4>
+                            <p>Jl. Pendidikan No. 123, Kelurahan Maju Jaya, Kecamatan Cerdas, Kota Pintar</p>
+                        </div>
+                        <div class="mb-4">
+                            <h4><i class="fas fa-phone text-primary me-2"></i> Telepon</h4>
+                            <p>(021) 1234-5678</p>
+                        </div>
+                        <div class="mb-4">
+                            <h4><i class="fas fa-envelope text-primary me-2"></i> Email</h4>
+                            <p>info@sman1majujaya.sch.id</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sMonumen%20Nasional!5e0!3m2!1sen!2sid!4v1605547222471!5m2!1sen!2sid" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5>Tentang Sekolah</h5>
+                        <p>SMA Negeri 1 Maju Jaya adalah sekolah unggulan yang telah berdiri sejak 1985. Kami berkomitmen untuk memberikan pendidikan terbaik bagi generasi penerus bangsa.</p>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>Link Cepat</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#home" class="text-light">Beranda</a></li>
+                            <li><a href="#profile" class="text-light">Profil Sekolah</a></li>
+                            <li><a href="#news" class="text-light">Berita</a></li>
+                            <li><a href="#gallery" class="text-light">Galeri</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>Media Sosial</h5>
+                        <div class="social-links">
+                            <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#" class="text-light"><i class="fab fa-youtube fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="bg-light">
+                <div class="text-center">
+                    <p class="mb-0">© 2023 SMA Negeri 1 Maju Jaya. Semua Hak Dilindungi.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="all-news-page" class="py-5" style="display: none;">
+        <div class="container">
+            <button class="btn btn-secondary mb-4" onclick="showFrontend()">
+                <i class="fas fa-arrow-left me-2"></i>Kembali ke Beranda
+            </button>
+            <h2 class="section-title text-center">Semua Berita</h2>
+            <div class="row" id="all-news-container">
+                </div>
+        </div>
+    </div>
+
+    <div id="all-gallery-page" class="py-5" style="display: none;">
+        <div class="container">
+            <button class="btn btn-secondary mb-4" onclick="showFrontend()">
+                <i class="fas fa-arrow-left me-2"></i>Kembali ke Beranda
+            </button>
+            <h2 class="section-title text-center">Semua Galeri Foto</h2>
+            <div class="row" id="all-gallery-container">
+                </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="newsDetailModal" tabindex="-1" aria-labelledby="newsDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newsDetailModalLabel">Detail Berita</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="newsDetailBody">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="galleryViewModal" tabindex="-1" aria-labelledby="galleryViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="galleryViewModalLabel">Lihat Foto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="galleryViewImage" src="" class="img-fluid" alt="Foto Galeri">
+                    <p class="mt-3" id="galleryViewTitle"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-login" class="admin-login" style="display: none;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card login-card">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <h3 class="card-title">Admin Login</h3>
+                                <p class="text-muted">Masuk ke Panel Admin</p>
+                            </div>
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                    <small id="passwordHelp" class="form-text text-muted">
+                                        Password harus memiliki minimal 8 karakter, termasuk huruf besar, huruf kecil, angka, dan simbol.
+                                    </small>
+                                </div>
+                                <div class="d-grid mb-2">
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                                <div class="text-center">
+                                    <a href="#" onclick="showResetPasswordModal()" class="text-danger">Lupa Password?</a>
+                                </div>
+                            </form>
+                            <div class="text-center mt-3">
+                                <a href="#" onclick="showFrontend()" class="text-muted">Kembali ke Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-panel" style="display: none;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-lg-2 admin-sidebar">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-3 text-white min-vh-100">
+                        <a href="#" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <span class="fs-5 d-none d-sm-inline">Admin Panel</span>
+                        </a>
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100" id="admin-menu">
+                            <li class="nav-item w-100">
+                                <a href="#dashboard" class="nav-link active" data-bs-toggle="tab">
+                                    <i class="fas fa-tachometer-alt"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="nav-item w-100">
+                                <a href="#manage-data" class="nav-link" data-bs-toggle="tab">
+                                    <i class="fas fa-database"></i> <span class="ms-1 d-none d-sm-inline">Data Sekolah</span>
+                                </a>
+                            </li>
+                            <li class="nav-item w-100">
+                                <a href="#manage-teachers" class="nav-link" data-bs-toggle="tab">
+                                    <i class="fas fa-chalkboard-teacher"></i> <span class="ms-1 d-none d-sm-inline">Kelola Guru</span>
+                                </a>
+                            </li>
+                            <li class="nav-item w-100">
+                                <a href="#manage-news" class="nav-link" data-bs-toggle="tab">
+                                    <i class="fas fa-newspaper"></i> <span class="ms-1 d-none d-sm-inline">Kelola Berita</span>
+                                </a>
+                            </li>
+                            <li class="nav-item w-100">
+                                <a href="#manage-gallery" class="nav-link" data-bs-toggle="tab">
+                                    <i class="fas fa-images"></i> <span class="ms-1 d-none d-sm-inline">Kelola Galeri</span>
+                                </a>
+                            </li>
+                            <li class="nav-item w-100">
+                                <a href="#manage-settings" class="nav-link" data-bs-toggle="tab">
+                                    <i class="fas fa-cogs"></i> <span class="ms-1 d-none d-sm-inline">Pengaturan</span>
+                                </a>
+                            </li>
+                            <li class="nav-item w-100 mt-4">
+                                <a href="#" class="nav-link text-danger" onclick="logout()">
+                                    <i class="fas fa-sign-out-alt"></i> <span class="ms-1 d-none d-sm-inline">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-lg-10 admin-content">
+                    <div class="admin-header d-flex justify-content-between align-items-center">
+                        <h4>Selamat Datang, Admin!</h4>
+                        <button class="btn btn-sm btn-secondary d-md-none" data-bs-toggle="collapse" data-bs-target="#admin-menu">Menu</button>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="dashboard">
+                            <h3 class="mb-4">Dashboard</h3>
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card text-white bg-primary">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="card-title">Total Berita</h5>
+                                                    <p class="card-text fs-3" id="dashboard-total-news">0</p>
+                                                </div>
+                                                <i class="fas fa-newspaper fa-3x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card text-white bg-success">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="card-title">Total Foto Galeri</h5>
+                                                    <p class="card-text fs-3" id="dashboard-total-gallery">0</p>
+                                                </div>
+                                                <i class="fas fa-images fa-3x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card text-white bg-info">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h5 class="card-title">Total Guru</h5>
+                                                    <p class="card-text fs-3" id="dashboard-total-teachers">0</p>
+                                                </div>
+                                                <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 class="mt-4">Statistik Singkat</h4>
+                            <div class="card">
+                                <div class="card-body">
+                                    <p><strong>Berita Terbaru:</strong> <span id="latest-news-title" class="text-muted">Tidak ada data.</span></p>
+                                    <p><strong>Foto Terbaru:</strong> <span id="latest-gallery-title" class="text-muted">Tidak ada data.</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="manage-data">
+                            <h3 class="mb-4">Kelola Data Sekolah</h3>
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Data Statistik
+                                </div>
+                                <div class="card-body">
+                                    <form id="statsForm" onsubmit="event.preventDefault(); saveSchoolStats();">
+                                        <div class="mb-3">
+                                            <label for="totalStudentsInput" class="form-label">Total Siswa Saat Ini</label>
+                                            <input type="number" class="form-control" id="totalStudentsInput" required value="0" min="0">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Simpan Statistik</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="manage-teachers">
+                            <h3 class="mb-4">Kelola Data Guru</h3>
+                            <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addTeacherModal">
+                                <i class="fas fa-plus-circle me-2"></i>Tambah Guru Baru
+                            </button>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="teachers-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nama Guru</th>
+                                            <th>Mata Pelajaran/Jabatan</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="manage-news">
+                            <h3 class="mb-4">Kelola Berita</h3>
+                            <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addNewsModal">
+                                <i class="fas fa-plus-circle me-2"></i>Tambah Berita Baru
+                            </button>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="news-admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Judul</th>
+                                            <th>Tanggal</th>
+                                            <th>Status</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="manage-gallery">
+                            <h3 class="mb-4">Kelola Galeri Foto</h3>
+                            <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addGalleryModal">
+                                <i class="fas fa-plus-circle me-2"></i>Tambah Foto Baru
+                            </button>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover" id="gallery-admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Judul Foto</th>
+                                            <th>Tanggal</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="manage-settings">
+                            <h3 class="mb-4">Pengaturan Website</h3>
+                            <div class="card">
+                                <div class="card-body">
+                                    <form id="settingsForm">
+                                        <div class="mb-3">
+                                            <label for="schoolName" class="form-label">Nama Sekolah</label>
+                                            <input type="text" class="form-control" id="schoolName" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="schoolAddress" class="form-label">Alamat</label>
+                                            <textarea class="form-control" id="schoolAddress" rows="2" required></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="schoolPhone" class="form-label">Telepon</label>
+                                                <input type="tel" class="form-control" id="schoolPhone" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="schoolEmail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="schoolEmail" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="schoolVision" class="form-label">Visi Sekolah</label>
+                                            <textarea class="form-control" id="schoolVision" rows="3" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="schoolMission" class="form-label">Misi Sekolah (Pisahkan dengan baris baru)</label>
+                                            <textarea class="form-control" id="schoolMission" rows="5" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addNewsModal" tabindex="-1" aria-labelledby="addNewsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addNewsModalLabel">Tambah Berita Baru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addNewsForm" onsubmit="event.preventDefault(); addNews();">
+                        <div class="mb-3">
+                            <label for="newsTitle" class="form-label">Judul Berita</label>
+                            <input type="text" class="form-control" id="newsTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsContent" class="form-label">Isi Berita</label>
+                            <textarea class="form-control" id="newsContent" rows="5" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsDate" class="form-label">Tanggal Publikasi</label>
+                            <input type="date" class="form-control" id="newsDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsImageSource" class="form-label">Sumber Gambar</label>
+                            <select class="form-select" id="newsImageSource" onchange="toggleNewsImageInput()">
+                                <option value="url">URL Gambar</option>
+                                <option value="upload">Unggah File</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="newsImageUrl">
+                            <label for="newsImage" class="form-label">URL Gambar Berita</label>
+                            <input type="url" class="form-control" id="newsImage" required>
+                        </div>
+                        <div class="mb-3" id="newsImageUpload" style="display: none;">
+                            <label for="newsImageFile" class="form-label">Unggah Gambar</label>
+                            <input type="file" class="form-control" id="newsImageFile" accept="image/*" onchange="previewNewsUploadImage(this)">
+                            <img id="newsUploadPreview" src="#" alt="Pratinjau Gambar" class="img-fluid mt-2" style="max-height: 150px; display: none;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newsStatus" class="form-label">Status</label>
+                            <select class="form-select" id="newsStatus" required>
+                                <option value="published">Published</option>
+                                <option value="draft">Draft</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan Berita</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editNewsModal" tabindex="-1" aria-labelledby="editNewsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editNewsModalLabel">Edit Berita</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editNewsForm" onsubmit="event.preventDefault(); updateNews();">
+                        <input type="hidden" id="editNewsId">
+                        <div class="mb-3">
+                            <label for="editNewsTitle" class="form-label">Judul Berita</label>
+                            <input type="text" class="form-control" id="editNewsTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNewsContent" class="form-label">Isi Berita</label>
+                            <textarea class="form-control" id="editNewsContent" rows="5" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNewsDate" class="form-label">Tanggal Publikasi</label>
+                            <input type="date" class="form-control" id="editNewsDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <img id="currentNewsImagePreview" src="" alt="Gambar Saat Ini" class="img-fluid mb-2" style="max-height: 150px;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNewsImageSource" class="form-label">Sumber Gambar Baru</label>
+                            <select class="form-select" id="editNewsImageSource" onchange="toggleEditNewsImageInput()">
+                                <option value="url">URL Gambar</option>
+                                <option value="upload">Unggah File</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="editNewsImageUrl">
+                            <label for="editNewsImage" class="form-label">URL Gambar Berita</label>
+                            <input type="url" class="form-control" id="editNewsImage">
+                        </div>
+                        <div class="mb-3" id="editNewsImageUpload" style="display: none;">
+                            <label for="editNewsImageFile" class="form-label">Unggah Gambar</label>
+                            <input type="file" class="form-control" id="editNewsImageFile" accept="image/*" onchange="previewEditNewsUploadImage(this)">
+                            <img id="editNewsUploadPreview" src="#" alt="Pratinjau Gambar Baru" class="img-fluid mt-2" style="max-height: 150px; display: none;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNewsStatus" class="form-label">Status</label>
+                            <select class="form-select" id="editNewsStatus" required>
+                                <option value="published">Published</option>
+                                <option value="draft">Draft</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Berita</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addGalleryModal" tabindex="-1" aria-labelledby="addGalleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addGalleryModalLabel">Tambah Foto Galeri Baru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addGalleryForm" onsubmit="event.preventDefault(); addGalleryItem();">
+                        <div class="mb-3">
+                            <label for="galleryTitle" class="form-label">Judul Foto</label>
+                            <input type="text" class="form-control" id="galleryTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="galleryDate" class="form-label">Tanggal</label>
+                            <input type="date" class="form-control" id="galleryDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="galleryImageSource" class="form-label">Sumber Gambar</label>
+                            <select class="form-select" id="galleryImageSource" onchange="toggleImageInput()">
+                                <option value="url">URL Gambar</option>
+                                <option value="upload">Unggah File</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="galleryImageUrl">
+                            <label for="galleryImage" class="form-label">URL Gambar Galeri</label>
+                            <input type="url" class="form-control" id="galleryImage" required>
+                        </div>
+                        <div class="mb-3" id="galleryImageUpload" style="display: none;">
+                            <label for="galleryImageFile" class="form-label">Unggah Gambar</label>
+                            <input type="file" class="form-control" id="galleryImageFile" accept="image/*" onchange="previewUploadImage(this)">
+                            <img id="uploadPreview" src="#" alt="Pratinjau Gambar" class="img-fluid mt-2" style="max-height: 150px; display: none;">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan Foto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editGalleryModal" tabindex="-1" aria-labelledby="editGalleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editGalleryModalLabel">Edit Foto Galeri</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editGalleryForm" onsubmit="event.preventDefault(); updateGalleryItem();">
+                        <input type="hidden" id="editGalleryId">
+                        <div class="mb-3">
+                            <label for="editGalleryTitle" class="form-label">Judul Foto</label>
+                            <input type="text" class="form-control" id="editGalleryTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editGalleryDate" class="form-label">Tanggal</label>
+                            <input type="date" class="form-control" id="editGalleryDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <img id="currentGalleryImagePreview" src="" alt="Gambar Saat Ini" class="img-fluid mb-2" style="max-height: 150px;">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editGalleryImage" class="form-label">URL Gambar Baru (Kosongkan jika tidak diubah)</label>
+                            <input type="url" class="form-control" id="editGalleryImage">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Foto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addTeacherModal" tabindex="-1" aria-labelledby="addTeacherModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTeacherModalLabel">Tambah Data Guru Baru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addTeacherForm" onsubmit="event.preventDefault(); addTeacher();">
+                        <div class="mb-3">
+                            <label for="teacherName" class="form-label">Nama Guru</label>
+                            <input type="text" class="form-control" id="teacherName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="teacherSubject" class="form-label">Mata Pelajaran/Jabatan</label>
+                            <input type="text" class="form-control" id="teacherSubject" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan Data Guru</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editTeacherModal" tabindex="-1" aria-labelledby="editTeacherModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editTeacherModalLabel">Edit Data Guru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editTeacherForm" onsubmit="event.preventDefault(); updateTeacher();">
+                        <input type="hidden" id="editTeacherId">
+                        <div class="mb-3">
+                            <label for="editTeacherName" class="form-label">Nama Guru</label>
+                            <input type="text" class="form-control" id="editTeacherName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editTeacherSubject" class="form-label">Mata Pelajaran/Jabatan</label>
+                            <input type="text" class="form-control" id="editTeacherSubject" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Data Guru</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resetPasswordModalLabel">Reset Password Admin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="requestResetForm">
+                        <p>Masukkan username admin untuk mengirimkan kode verifikasi ke email/admin.</p>
+                        <div class="mb-3">
+                            <label for="resetUsername" class="form-label">Username Admin</label>
+                            <input type="text" class="form-control" id="resetUsername" required>
+                        </div>
+                        <button class="btn btn-primary" onclick="requestPasswordReset()">Minta Kode Verifikasi</button>
+                    </div>
+                    <div id="verifyCodeForm" style="display:none;">
+                        <p class="text-success">Kode verifikasi telah dikirim. Masukkan kode dan password baru Anda.</p>
+                        <div class="mb-3">
+                            <label for="verificationCode" class="form-label">Kode Verifikasi (Contoh: 123456)</label>
+                            <input type="text" class="form-control" id="verificationCode" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">Password Baru</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmNewPassword" class="form-label">Konfirmasi Password Baru</label>
+                            <input type="password" class="form-control" id="confirmNewPassword" required>
+                        </div>
+                        <button class="btn btn-success" onclick="verifyAndResetPassword()">Reset Password</button>
+                        <button class="btn btn-link mt-2" onclick="showRequestResetForm()">Kembali</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
